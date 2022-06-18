@@ -1,0 +1,40 @@
+cabal-version:      3.0
+name:               filepath-debug
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            MIT
+license-file:       LICENSE
+-- author:
+-- maintainer:
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+
+executable filepath-debuggee
+  main-is:            Debuggee.hs
+  hs-source-dirs:     app
+  default-language:   Haskell2010
+  ghc-options:
+    -Wall -finfo-table-map -fdistinct-constructor-tables -threaded
+
+  build-depends:
+      base
+    , bytestring
+    , filepath
+    , deepseq
+    , ghc-debug-stub
+
+
+executable filepath-debugger
+  main-is:            Debugger.hs
+  hs-source-dirs:     app
+  default-language:   Haskell2010
+  ghc-options:
+    -Wall -finfo-table-map -fdistinct-constructor-tables -threaded
+
+  build-depends:
+        base
+      , ghc-debug-client

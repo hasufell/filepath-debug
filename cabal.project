@@ -1,0 +1,13 @@
+packages: .
+
+with-compiler: ghc-9.2.3
+
+source-repository-package
+  type: git
+  location: https://gitlab.haskell.org/haskell/filepath.git
+  tag: 58f0b2f8af633974e813706992e6835b3db9382f
+
+package *
+  ghc-options: -finfo-table-map -fdistinct-constructor-tables
+
+allow-newer: filepath
